@@ -146,6 +146,40 @@ colnames(tweet_raw) <- c("Date","Time","User", "Tweet","Tweet_cleaned", "Raw_Sen
 nrow(tweet_raw)
 
 tweet_raw <- tweet_raw %>% filter(!is.na(Raw_Sentiment_Score))
+
+tweet_raw <- read.csv("./data_final/NFWF_tweets_final_topics.csv")[,-1]
+# Adjusting column type and adding time information
+tweet_raw <- tweet_raw %>% mutate(Time = as.POSIXlt(Time, tz = "", format="%Y-%m-%d %H:%M:%OS"),
+                                  Date = as.Date(Date),
+                                  Year = year(Date),
+                                  User = as.character(User),
+                                  Month = month(Date),
+                                  Week_of_start = floor_date(Date, unit = "week"),
+                                  Week_of_end = ceiling_date(Date, unit = "week"),.after = "Date")
+
+# Add sentiment category using cutoffs 
+tweet_raw <- tweet_raw %>%
+  mutate(VADER_Sentiment = case_when(
+    Raw_Sentiment_Score < -0.05 ~ 'negative',  # If Vader is less than -0.05, it's Negative
+    Raw_Sentiment_Score > 0.05 ~ 'positive',   # If Vader is greater than 0.05, it's Positive
+    TRUE ~ 'neutral'             # Otherwise, it's Neutral
+  ))
+
+# Identify when users first appear 
+first_seen <- tweet_raw %>%
+  group_by(User) %>%
+  summarise(First_Date = min(Date), .groups = "drop") %>%
+  mutate(Week_of_first = floor_date(First_Date, unit = "week"))
+
+tweet_raw <- tweet_raw %>% left_join(first_seen,by = join_by(User))
+tweet_raw <- tweet_raw %>% mutate(Users_new = ifelse(Week_of_first == Week_of_start, 1, 0))
+
+tweet_raw <- tweet_raw %>%
+  group_by(User) %>%
+  mutate(Users_new = ifelse(Users_new == 1 & cumsum(Users_new == 1) == 1, 1, 0)) %>%
+  ungroup() %>% dplyr::select(-First_Date,-Week_of_first)
+
+rm(first_seen)
 # Saving output
 write.csv(tweet_raw,"./data_final/NFWF_tweets_final.csv")
 

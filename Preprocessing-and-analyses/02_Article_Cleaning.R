@@ -227,5 +227,13 @@ gdelt_all_clean <- read.csv("./data_final/NFWF_articles_final_filter2.csv")[,-1]
 Cleaned_Sentiment_Score_R <- vader_df(gdelt_all_clean$subset_text_VADER)
 gdelt_all_clean$Raw_Sentiment_Score <- Cleaned_Sentiment_Score_R$compound
 
+# Add sentiment category using cutoffs 
+gdelt_all_clean <- gdelt_all_clean %>%
+  mutate(VADER_Sentiment = case_when(
+    Raw_Sentiment_Score < -0.05 ~ 'negative',  # If Vader is less than -0.05, it's Negative
+    Raw_Sentiment_Score > 0.05 ~ 'positive',   # If Vader is greater than 0.05, it's Positive
+    TRUE ~ 'neutral'             # Otherwise, it's Neutral
+  ))
+
 write.csv(gdelt_all_clean,"./data_final/NFWF_articles_final_filter2.csv")
 

@@ -6,13 +6,16 @@ An [National Fish and Wildlife Foundation](https://www.nfwf.org/) project in col
 ```bash
 ├── GDELT-article-extraction # Article extraction workflows
 ├── Tweet-extraction  # Tweet scraping 
+├── Weekly_aggregated_data.csv # Dataset representing metrics of sentiment, engagement, and activity aggregated to the weekly level
+├── Article_data.csv # Article dataset, text and identifying information removed
+├── Tweet_data.csv # Article dataset, text and identifying information removed
 ├── Preprocessing-and-analyses  # Data preprocessing, analyses, and figures
 ├── .gitignore
 └── README.md
 ```
 
 ## :information_source: About this Project <a name="about"></a>
-Public attitudes towards a species can determine a community’s willingness to support conservation management actions. As such, outreach can play a central role in determining conservation outcomes. User-generated, open source content represents a rich resource for studying public perceptions of and engagement with conservation topics, and can provide actionable insights for designing outreach efforts. Here we analyze social media posts on Twitter/X (hereafter ‘Twitter’) and news articles published from 2012-2024 related to the Mojave desert tortoise (</i>Gopherus agassizii</i>, hereafter ‘tortoise’). This work represents a practical framework that is broadly transferable and can be leveraged across conservation contexts to evaluate public responses to policy decisions, identify emerging narratives, and detect key events or inflection points in conservation discourse. Ultimately, by embedding NLP-driven assessments into conservation practice, we can help transform outreach from static communications into a more dynamic, responsive, and data-informed dialogue.
+Public attitudes towards a species can determine a community’s willingness to support conservation management actions. User-generated, open-source content represents a rich resource for studying public perceptions of and engagement with conservation topics, and can provide actionable insights for designing outreach efforts. Here we analyze social media posts on Twitter/X (hereafter ‘Twitter’) and news articles published from 2012-2024 related to the Mojave desert tortoise (</i>Gopherus agassizii</i>, hereafter ‘tortoise’). We quantified the sentiment and volume of, and engagement with, online content, and identified salient topics of discussion and key events impacting online discourse. This work represents a practical framework for using NLP to develop metrics to measure public perception.
 
 ## :computer: Analysis
 ### Step 1: Compile relevant social media posts

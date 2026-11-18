@@ -131,7 +131,7 @@ dmypy.json
 #data
 # Ignore all files and subdirectories in the data directory
 data_final/*
-*.csv
+
 
 # credentials
 conf/local
