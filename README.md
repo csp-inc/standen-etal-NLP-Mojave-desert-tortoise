@@ -38,12 +38,14 @@ To quantify the baseline sentiment of Twitter posts and news articles regarding 
 
 
 ## References
-Blei, David M., Andrew Y. Ng, and Michael I. Jordan. 2003. “Latent Dirichlet Allocation.” Journal of Machine Learning Research, no. 3: 993–1022.
+Blei, D. M., Ng, A. Y., & Jordan, M. I. (2003). Latent dirichlet allocation. Journal of machine Learning research, 3(Jan), 993-1022.
 
-Fink, Christoph, Anna Hausmann, and Enrico Di Minin. 2020. “Online Sentiment towards Iconic Species.” Biological Conservation 241 (January): 108289. https://doi.org/10.1016/j.biocon.2019.108289.
+Di Minin, E., Fink, C., Hausmann, A., Kremer, J., & Kulkarni, R. (2021). How to address data privacy concerns when using social media data in conservation science. Conservation Biology, 35(2), 437-446.
 
-GDELT Project. 2026. “Global Database of Events, Language, and Tone (GDELT).” https://www.gdeltproject.org/.
+Fink, C., Hausmann, A., & Di Minin, E. (2020). Online sentiment towards iconic species. Biological Conservation, 241, 108289.
 
-Hutto, C., and Eric Gilbert. 2014. “VADER: A Parsimonious Rule-Based Model for Sentiment Analysis of Social Media Text.” Proceedings of the International AAAI Conference on Web and Social Media 8 (1): 216–25. https://doi.org/10.1609/icwsm.v8i1.14550.
+GDELT Project. (2026). Global Database of Events, Language, and Tone (GDELT). https://www.gdeltproject.org/.
 
-Roesslein, J. 2020. “Tweepy: An Easy-to-Use Python Library for Accessing the Twitter API.” GitHub repository. Version v2. Tweepy. https://github.com/tweepy/tweepy.
+Hutto, C., & Gilbert, E. (2014, May). Vader: A parsimonious rule-based model for sentiment analysis of social media text. In Proceedings of the international AAAI conference on web and social media (Vol. 8, No. 1, pp. 216-225).
+
+Roesslein, J. (2009). Tweepy. An easy-to-use Python library for accessing the Twitter API. Github repository. https://github.com/tweepy/tweepy.
