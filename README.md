@@ -8,7 +8,7 @@ An [National Fish and Wildlife Foundation](https://www.nfwf.org/) project in col
 ├── Tweet-extraction  # Tweet scraping 
 ├── Weekly_aggregated_data.csv # Dataset representing metrics of sentiment, engagement, and activity aggregated to the weekly level
 ├── Article_data.csv # Article dataset, text and identifying information removed
-├── Tweet_data.csv # Article dataset, text and identifying information removed
+├── Tweet_data.csv # Tweet dataset, text and identifying information removed
 ├── Preprocessing-and-analyses  # Data preprocessing, analyses, and figures
 ├── .gitignore
 └── README.md
