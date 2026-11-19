@@ -34,8 +34,9 @@ weekly_dat_all <- read.csv("./Weekly_aggregated_data.csv")[,-1] %>% mutate(Week_
                                                                            Week_of_end = as.Date(Week_of_end))
 
 
-article_raw <- read.csv("./Article_data.csv")[,-1]
-tweet_raw <- read.csv("./Tweet_data.csv")[,-1]
+article_raw <- read.csv("./Article_data.csv")
+
+tweet_raw <- read.csv("./Tweet_data.csv")
 
 ## Chi-squared test to compare distribution of sentiment -----
 ### Tweets -----
